@@ -1,0 +1,28 @@
+-- consulta general
+SELECT * FROM globostudio.product;
+-- consulta por una condicion de la tabla producto
+SELECT * FROM globostudio.product WHERE size=4;
+
+-- actualizar valor a un atributo en especifico 
+UPDATE globostudio.product SET name='redondo' WHERE color='4';
+-- UPDATE= es actualizar
+-- SET= es colocar o poner
+-- WHERE= es condicion, que se va a seleccionar
+
+-- eliminar registros (solo se usa cuando la tabla que se va a eliminar no esta relacionada con ninguna otra tabla)
+DELETE FROM globostudio.color WHERE id_color=4;
+
+-- insertar datos 
+INSERT INTO globostudio.city (id_city, name) VALUES
+('6', 'Armenia');
+
+-- clausula INNER JOIN sirve para combinar los registros de dos tablas si hay valores que coinciden 
+SELECT * FROM globostudio.color INNER JOIN globostudio.product ON 
+color.id_color=product.id_color;
+
+-- consulta algunos atributos con inner join
+SELECT globostudio.color.id_color, globostudio.product.name, globostudio.product.price
+FROM globostudio.color INNER JOIN globostudio.product ON 
+color.id_color=product.id_color;
+
+
