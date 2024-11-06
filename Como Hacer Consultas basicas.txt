@@ -25,4 +25,34 @@ SELECT globostudio.color.id_color, globostudio.product.name, globostudio.product
 FROM globostudio.color INNER JOIN globostudio.product ON 
 color.id_color=product.id_color;
 
+-- obtener tabla completa
+SELECT * FROM sakila.actor;
+
+-- clausula WHERE: SELECT + (*=obtener todos los campos o nombre del campo o campos) + FROM + nombredb.nombretabla + WHERE + NOMBRE.CAMPO + CONDICION WHERE
+-- buscar una pelicula por su id
+SELECT * FROM sakila.film
+WHERE film_id = 20;
+
+-- buscar el id y el titulo y la condicion sea 20
+SELECT film_id, title FROM sakila.film
+WHERE film_id = 20;
+
+-- obtener todos los datos de una peliula
+SELECT * FROM sakila.film
+WHERE title = 'HALL CASSIDY';
+
+-- obtener algunos datos de una pelicula por su nombre
+SELECT title, description, language_id FROM sakila.film
+WHERE title = 'HALL CASSIDY';
+
+-- JOIN: para unir dos tablas
+SELECT * FROM sakila.actor a
+INNER JOIN sakila.film_actor fa ON a.actor_id = fa.actor_id;
+
+-- JOIN: para buscar dos columnas o mas de tablas distintas
+-- SELECT + nombre.columna + nombre.asignado + FROM db.tabla + alias
+-- INNER JOIN + segunda db.tabla + alias + ON + relacion.entreTablas conmenzando por alias.
+SELECT a.actor_id, fa.actor_id FROM sakila.actor a
+INNER JOIN sakila.film_actor fa ON a.actor_id = fa.actor_id;
+
 
