@@ -56,3 +56,21 @@ SELECT a.actor_id, fa.actor_id FROM sakila.actor a
 INNER JOIN sakila.film_actor fa ON a.actor_id = fa.actor_id;
 
 
+-- OPERADOR LIKE buscar una palabra por sus dos primeras o primera inicial: 
+-- SELECT + nombrecolumna + FROM + db.tabla + WHERE condición + LIKE 'la palabra por la que comienza nuestro registro seguido de % = 'Mi' para Michael
+SELECT color FROM globostudio.color WHERE color LIKE 'gr%';
+
+-- OPERADOR LIKE buscar una palabra por sus ultimas palabras, lo que cambia es que el % se debe poner al principio:
+-- SELECT + nombrecolumna + FROM + db.tabla + WHERE condición + LIKE '% luego del signo sigue la palabra por la que termina nuestro registro = 'el' para Michael
+SELECT color FROM globostudio.color WHERE color LIKE '%nge';
+
+
+-- OPERADOR LIKE buscar una serie de palabras, lo que cambia es que debemos usar dos % uno al inicio y otro al final de las palabras que queremos buscar Ej %cha% para Michael:
+-- SELECT + nombrecolumna + FROM + db.tabla + WHERE condición + LIKE '% luego del signo sigue la palabra por la que termina nuestro registro y termina con otro signo % = 'cha' para Michael
+SELECT color FROM globostudio.color WHERE color LIKE '%urp%';
+
+
+-- CONCACTENAR: sirve para agregar un numero o palabra dentro de una casilla cualquiera:
+SELECT store_id, CONCAT("primero ", first_name) FROM customer WHERE store_id = 1;
+
+
